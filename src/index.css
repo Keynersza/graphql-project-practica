@@ -11,3 +11,212 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.card {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8%;
+}
+.conta-prod {
+  display: inline-flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  margin: 50px;
+  /*   justify-content: space-around; */
+}
+
+.box-product {
+  /*   border: 1px solid; */
+  border-radius: 20px 35px 20px 35px;
+  box-shadow: -2px -1px 20px 1px #0707076f;
+  margin: 0px 15px 20px 20px;
+  text-align: center;
+  width: 260px;
+  overflow: hidden;
+  height: 38vh;
+  cursor: pointer;
+  transition: all 1s;
+  /*  animation: animationCard s ease-in; */
+  padding: 16px;
+}
+
+/* HOVERS */
+
+.box-product:hover {
+  transform: scale(1.1);
+  box-shadow: -2px -1px 20px 1px #000000c6;
+}
+
+.title-produc {
+  font-size: 20px;
+  color: #272626;
+  font-weight: 600;
+  margin: 5px;
+}
+
+.border-input{
+  border-top: 32px solid rgb(205, 205, 205);
+    border-right: 1px solid rgb(205, 205, 205);
+    /* border-bottom: 1px solid rgb(7, 7, 7); */
+    /* border-image: initial; */
+    position: absolute;
+    right: 52%;
+    top: 35px;
+}
+
+.dp-product {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000ad;
+}
+.date-product {
+  float: right;
+  margin: 32px 5px 0px 0px;
+  color: #999999db;
+  font-size: 15px;
+  font-weight: 550;
+  position: relative;
+  bottom: 4%;
+  right: 3%;
+}
+
+.price-product {
+  font-size: 19px;
+  color: #000000;
+  font-weight: 600;
+  position: relative;
+  right: 20%;
+  bottom: 22px;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #80808094;
+  font-size: 15px;
+  font-weight: 550;
+  display: block;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.formulario {
+  display: flex;
+  /* flex-direction: column; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.one-input {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+.one-input input {
+  height: 3vh;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid rgba(128, 128, 128, 0.518);
+  border-radius: 10px;
+  padding: 8px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #80808094;
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.two-input {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.two-input input {
+  height: 6vh;
+  font-size: 17px;
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.518);
+  border-radius: 10px;
+  padding: 8px;
+  outline: none;
+}
+.two-input input::placeholder {
+  position: absolute;
+  top: 5px;
+}
+
+.three-input {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.three-input input {
+  height: 3vh;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid rgba(128, 128, 128, 0.518);
+  border-radius: 10px;
+  padding: 8px;
+  outline: none;
+}
+
+.for-input {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.for-input input {
+  height: 3vh;
+  width: 100%;
+  font-size: 17px;
+  padding: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.518);
+  border-radius: 10px;
+  outline: none;
+}
+input:focus {
+  border: 1px solid #06c;
+  box-shadow: 0px 0px 6px 2px rgba(0, 102, 204, 0.649);
+}
+
+.button-formulario {
+  width: 130px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(2, 126, 228, 0.802);
+  color: rgb(205, 205, 205);
+  cursor: pointer;
+  margin-left: 15px;
+  margin-top: 10px;
+  transition: all 1s;
+  font-weight: 500;
+}
+
+.button-formulario:hover {
+  background-color: hsla(218, 100%, 50%, 0.993);
+  color: rgb(255, 255, 255);
+}
+
+.pop-cat{
+  font-size: 28px;
+  font-weight: 300;
+  margin-left: 220px;
+  color: #676666;
+}
+
+@keyframes animationCard {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%);
+  }
+}
