@@ -50,7 +50,7 @@ const InputProduct = () => {
         <input type="file" name="file" onChange={imageCard} />
 
         <div className="one-input">
-          <label>Nombre del Producto</label>
+          <label className='label-product'>Nombre del Producto</label>
           <input
             type="text"
             name="name"
@@ -62,7 +62,7 @@ const InputProduct = () => {
         </div>
 
         <div className="two-input">
-          <label>Descripcion del Producto</label>
+          <label className='label-product'>Descripcion del Producto</label>
           <input
             type="text"
             name="description"
@@ -73,7 +73,7 @@ const InputProduct = () => {
         </div>
 
         <div className="three-input">
-          <label>Precio del Producto</label>
+          <label className='label-product'>Precio del Producto</label>
           <input
             type="text"
             name="price"
@@ -84,7 +84,7 @@ const InputProduct = () => {
         </div>
 
         <div className="for-input">
-          <label>Fecha de Creacion del Producto</label>
+          <label className='label-product'>Fecha de Creacion del Producto</label>
           <input
             type="date"
             name="date"

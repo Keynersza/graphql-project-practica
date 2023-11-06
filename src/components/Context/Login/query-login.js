@@ -1,8 +1,9 @@
 import { gql } from "@apollo/client";
 
 export const GET_USERS = gql`
-query FindPersonByEmail($email: String!, $password: String!) {
-  findPersonByEmail(email: $email, password: $password) {
+query FindPersonByEmail($name: String!, $email: String!, $password: String!) {
+  findPersonByEmail(name: $name, email: $email, password: $password) {
+    name
     email
     password  
   }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Nav/navigation';
-import imgHeader from '../assets/pngegg (1).png';
+import imgHeader from '../assets/pngwing.com (4).png';
 import Products from '../components/Cards/card-Product';
 import { useAllProducts } from '../components/Context/Products/customHooks-products';
 import Aos from 'aos';
@@ -20,8 +20,8 @@ const Home = () => {
         <Navigation />
         <div className="container">
           <div className="textos">
-            <h1>Manten tu casa en buen estado</h1>
-            <p>No dudes en comprar tus productos aca</p>
+            <h1>Te damos la oportunidad de comprar y vender el Producto que Desees!</h1>
+            <p>No dudes en crear tu propia venta de Productos. Aprovecha Ya!!!</p>
             <Link to={'/create-product'}>
               <button className="btn-header">Crear mi Producto</button>
             </Link>
@@ -46,6 +46,7 @@ const Home = () => {
       <br />
       <br />
       <br />
+      <h2 className="pop-product">Productos Populares:</h2>
       {loading ? loading : <Products productos={data?.allProducts} />}
       <div>
         <h2 className="pop-cat">Categorias Populares: </h2>

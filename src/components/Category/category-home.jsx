@@ -8,7 +8,7 @@ const CategoryHome = () => {
     <section className="section-catg">
       <div className="category">
         <div className="box-catgr">
-          <FontAwesomeIcon icon={faHome} className="icons-category"/>
+          <FontAwesomeIcon icon={faHome} className="icons-category" />
           <p>Hogar y Muebles</p>
         </div>
 
@@ -62,6 +62,22 @@ const CategoryHome = () => {
           <p>Industrias</p>
         </div>
 
+        <div className="box-catgr">
+            <FontAwesomeIcon icon={faGamepad} className="icons-category"/>
+          <p>Juegos y Juguetes</p>
+        </div>
+        <div className="box-catgr">
+            <FontAwesomeIcon icon={faGamepad} className="icons-category"/>
+          <p>Juegos y Juguetes</p>
+        </div>
+        <div className="box-catgr">
+            <FontAwesomeIcon icon={faGamepad} className="icons-category"/>
+          <p>Juegos y Juguetes</p>
+        </div>
+        <div className="box-catgr">
+            <FontAwesomeIcon icon={faGamepad} className="icons-category"/>
+          <p>Juegos y Juguetes</p>
+        </div>
         <div className="box-catgr">
             <FontAwesomeIcon icon={faGamepad} className="icons-category"/>
           <p>Juegos y Juguetes</p>
