@@ -1,7 +1,10 @@
 import React from 'react';
+import Producto from '../../Views/Producto';
+import { Link } from 'react-router-dom';
 
 const Products = ({ productos }) => {
-  console.log('productos', productos);
+  console.log('productos', productos.id);
+
 
   return (
     <div>
@@ -22,7 +25,12 @@ const Products = ({ productos }) => {
                   <p className="price-product">{product.price}</p>
                 </div>
                 <p className="date-product">{product.dueDate}</p>
-                <button className="btn-product">Ver Producto</button>
+                <Link to={`/produc/${product.id}`}><button className="btn-product"
+                /* {
+                 ...productos? <Producto productoId={productos}/>
+                 : null
+                } */
+               >Ver Producto</button></Link>
               </div>
           </div>
           ))}

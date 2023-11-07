@@ -6,6 +6,7 @@ import SignUp from '../Views/signUp'
 import Error404 from '../Pages/error404'
 import InputProduct from '../components/Forms/InputProduct'
 import { PrivateRoute } from './Private/privateRoute'
+import Producto from '../Views/Producto'
 
 export const AppRoutes = () => {
   return (
@@ -14,9 +15,9 @@ export const AppRoutes = () => {
     <Route element={<PrivateRoute/>}>
          <Route path='/create-product' element = {<InputProduct/>}/>
     </Route>
-
       {/* <Route element={publicRoute}/>  */}
       <Route path='/' element = {<Home/>}/>
+      <Route path='/produc/:id' element = {<Producto/>}/>
       <Route path='/sesion' element = {<SignIn/>}/>
       <Route path='/register' element = {<SignUp/>}/>
       <Route path='*' element = {<Error404/>}/>

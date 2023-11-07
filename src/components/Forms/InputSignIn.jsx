@@ -3,6 +3,8 @@ import { useSignIn } from '../Context/Login/hook-query-login';
 import { Link, useNavigate } from 'react-router-dom';
 import fondInit from '../../assets/fondo-negro.jpg';
 import { LodInit } from '../Loader/lodInit';
+
+
 const InputSignIn = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -32,10 +34,13 @@ const InputSignIn = () => {
         let datos = data.findPersonByEmail.name
         console.log(datos);
           if (data) {
-          localStorage.setItem('User', datos)
-          console.log("log");
-          setLoading(false)
-          navigate('/')
+            setTimeout(() => {
+              localStorage.setItem('User', datos)
+              console.log("log");
+              setLoading(false)
+              navigate('/')
+              
+            }, 2000);
         }  
       }
     });

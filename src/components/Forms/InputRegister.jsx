@@ -15,6 +15,7 @@ const InputRegister = () => {
   const [loading, setLoading] = useState(false)
   const [invalidMessage, setinvalidMessage] = useState(null)
   const [createPerson] = useSignUp();
+  const navigate = useNavigate()
 
   const addUser = async (e) => {
     e.preventDefault();
@@ -43,6 +44,10 @@ const InputRegister = () => {
 
     if (password === repeatpassword) {
       console.log('Son iguales')
+      setTimeout(() => {
+        setLoading(false)
+        navigate('/sesion')
+      }, 2000);
       return;
     }else{
       setIsError('Las contraseñas no coinciden')

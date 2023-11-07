@@ -8,12 +8,14 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import CategoryHome from '../components/Category/category-home';
 
+
+
 const Home = () => {
   useEffect(() => {
     Aos.init();
   }, []);
   const { loading, data, error } = useAllProducts();
-  console.log('data', data);
+  console.log("aja", data?.allProducts);
   return (
     <div>
       <header>
