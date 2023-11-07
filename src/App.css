@@ -37,18 +37,32 @@
   }
 }
 
+.errInput{
+  border: 1px solid #e1000069 ;
+}
+.inputOulinet{
+  border: 1px solid #8080804f;
+}
 .message {
-  color: #ff0000ad;
+  color: #e1000069;
     position: absolute;
     top: 230px;
     left: 181px;
     font-size: 17px;
 }
 .messagePass {
-  color: #ff0000ad;
+  color: #e1000069;
    margin: 0px;
   font-size: 16px;
 }
+
+.messageEmail{
+  font-size: 13px;
+  margin: 0px;
+  margin-left: 6px;
+  color: #e1000069;
+}
+
 
 
 header {
@@ -459,7 +473,6 @@ header {
   height: 3vh;
   border-radius: 11px;
   padding: 8px;
-  border: 1px solid #8080804f;
   outline: none;
   font-size: 15px;
   font-weight: 400;
@@ -469,7 +482,6 @@ header {
   height: 3vh;
   border-radius: 11px;
   padding: 8px;
-  border: 1px solid #8080804f;
   outline: none;
   font-size: 15px;
   font-weight: 400;
@@ -480,7 +492,6 @@ header {
   height: 3vh;
   border-radius: 11px;
   padding: 8px;
-  border: 1px solid #8080804f;
   outline: none;
   font-size: 15px;
   font-weight: 400;
@@ -490,7 +501,6 @@ header {
   height: 3vh;
   border-radius: 11px;
   padding: 8px;
-  border: 1px solid #8080804f;
   outline: none;
   font-size: 15px;
   font-weight: 400;

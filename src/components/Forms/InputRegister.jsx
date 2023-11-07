@@ -2,29 +2,42 @@ import React, { useState } from 'react';
 import { useSignUp } from '../Context/Register/custom-hooks-register';
 import formInit from '../../assets/fondo-negro.jpg'
 import { Link, useNavigate } from 'react-router-dom';
+import { LodInit } from '../Loader/lodInit';
 
 const InputRegister = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [repeatpassword, setRepeatPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [errorActive, setErrorActive] = useState(false);
-  const [isValidError, setIsValidError] = useState('');
   const [isError, setIsError] = useState('');
-
+  const [isValidError, setIsValidError] = useState('');
+  const [errorActive, setErrorActive] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [invalidMessage, setinvalidMessage] = useState(null)
   const [createPerson] = useSignUp();
 
   const addUser = async (e) => {
     e.preventDefault();
-
+      setLoading(true)
     await createPerson(
-      { variables: { name, password, email } },
-      console.log(useSignUp)
+      { variables: { name, password, email },
+      onError: (error) =>{
+        setTimeout(() => {
+          if (error) {
+            setLoading(false)
+           setinvalidMessage(error.graphQLErrors[0].message)
+          }
+        }, 2000);
+      }
+      }
     );
 
     if (!email || !password || !name || !repeatpassword) {
-      setIsValidError("Campos Vacios")
-      setErrorActive(true);
+      setTimeout(() => {
+        setLoading(false)
+        setIsValidError("Campos Vacios")
+        setErrorActive(true);
+      }, 2000);
       return;
     }
 
@@ -39,6 +52,8 @@ const InputRegister = () => {
 
   return (
     <div className="complete">
+      {
+        loading ? <LodInit/> : <>
       <div>
             <h1 className="title-img">
               CREA UN NUEVO USUARIO Y EMPIEZA EN ESTE MUNDO DE VENDER Y COMPRAR
@@ -54,6 +69,7 @@ const InputRegister = () => {
             <input
               type="text"
               name="name"
+              className={errorActive ? 'errInput' : 'inputOulinet'}
               placeholder={'Introduzca un Nombre'}
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -65,10 +81,12 @@ const InputRegister = () => {
             <input
               type="email"
               name="email"
+               className={errorActive ? 'errInput' : 'inputOulinet'}
               placeholder={'Introduzca un Email'}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            />
+              />
+            <h2 className='messageEmail'>{invalidMessage}</h2>
           </div>
 
           <div class='box-input-reg3'>
@@ -76,10 +94,11 @@ const InputRegister = () => {
             <input
               type="password"
               name="password"
+               className={errorActive ? 'errInput' : 'inputOulinet'}
               placeholder={'Introduzca un Password'}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
+              />
           </div>
 
           <div class='box-input-reg4'>
@@ -87,10 +106,11 @@ const InputRegister = () => {
             <input
               type="password"
               name="password"
+               className={errorActive ? 'errInput' : 'inputOulinet'}
               placeholder={'De nuevo la Password'}
               value={repeatpassword}
               onChange={(e) => setRepeatPassword(e.target.value)}
-            />
+              />
             <h3 className='messagePass'>{isError}</h3>
           </div>
           <div className='yes-accounts'>
@@ -103,6 +123,8 @@ const InputRegister = () => {
           <button className='btn-regist'>Registrarme</button>
         </div>
       </form>
+      </>
+    }
     </div>
   );
 };
