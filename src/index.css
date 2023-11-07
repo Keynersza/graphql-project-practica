@@ -257,6 +257,46 @@ input:focus {
   transform: scale(1.1);
 }
 
+.box-productosss{
+  border: 1px solid #80808024;
+  width: 55%;
+  height: 61vh;
+  animation: animationProduct 0.7s ease-in;
+}
+.product-completee{
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+}
+.box-nameee {
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.box-descrippp {
+    font-size: 32px;
+    margin-left: 20px;
+    color: #3e3c3c;
+}
+
+.box-dateee{
+  position: absolute;
+  bottom: 27%;
+  left: 64%;
+}
+.box-priceee{
+  font-size: 31px;
+    margin-left: 20px;
+}
+
+.img-product-box{
+  animation: animationProductImg 0.7s ease-in;
+}
+
+
+
+
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -266,10 +306,21 @@ input:focus {
   }
 }
 
-@keyframes animationCard {
+@keyframes animationProduct {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%);
+  }
+}
+
+@keyframes animationProductImg {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
   }
   100% {
     opacity: 1;
