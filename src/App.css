@@ -120,9 +120,7 @@ header {
   display: inline-block;
   object-fit: contain;
   height: 47vh;
-  position: relative;
-  top: 22px;
-  left: 109px;
+ 
 }
 
 .box-price {
@@ -145,23 +143,24 @@ header {
   list-style: none;
 }
 
+.list-ul a:focus-within .sublist-category {
+  display: block; 
+ 
+}
+
+
 .list-ul a {
   display: inline-block;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.786);
-  margin: 0px 50px;
-  transition: all 0.4s;
-  font-size: 17px;
+  margin: 0px 35px;
+  font-size: 19px;
   font-weight: 450;
 }
-.list-ul a:hover {
-  transition: all 0.8s;
-  border: 23px solid #61dafb;
-  background-color: #61dafb;
+ .list-ul a:hover {
   color: white;
-  border-radius: 10px;
 }
-
+ 
 .input-search {
   width: 30%;
   height: 45px;

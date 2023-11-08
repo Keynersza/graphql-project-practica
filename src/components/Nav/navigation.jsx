@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/pngwing.com (6).png';
 import logoInput from '../../assets/Magnifying-Glass-PNG-Transparent-HD-Photo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faCircleArrowDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Logaout } from '../../controllers/logaout';
 
 export const Navigation = () => {
@@ -35,13 +35,26 @@ export const Navigation = () => {
         </button>
         <div className="men-list">
           <Link>
+            <li>
+              Categoria
+              </li>
+              <ul className='sublist-category'>
+              <FontAwesomeIcon icon={faCircleArrowDown} className="icon-arrow" />
+                <li>Ropa</li>
+                <li>Zapatos</li>
+                <li>Telefonos</li>
+                <li>Relojes</li>
+                <li>Neveras</li>
+              </ul>
+          </Link>
+          <Link>
             <li>Contacto</li>
           </Link>
           <Link>
-            <li>Productos</li>
+            <li>Historial</li>
           </Link>
           <Link>
-            <li>Historial</li>
+            <li>Mis Compras</li>
           </Link>
           {
           localStorage.getItem('User') 

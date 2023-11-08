@@ -29,8 +29,16 @@ const InputRegister = () => {
            setinvalidMessage(error.graphQLErrors[0].message)
           }
         }, 2000);
+      },
+      onCompleted: (data) => {
+        if (data) {
+          setTimeout(() => {
+            setLoading(false)
+            navigate('/sesion')
+          }, 2000);
       }
       }
+      },
     );
 
     if (!email || !password || !name || !repeatpassword) {
@@ -44,15 +52,12 @@ const InputRegister = () => {
 
     if (password === repeatpassword) {
       console.log('Son iguales')
-      setTimeout(() => {
-        setLoading(false)
-        navigate('/sesion')
-      }, 2000);
       return;
     }else{
       setIsError('Las contraseñas no coinciden')
       setErrorActive(true)
     }
+   
   };
 
   return (
