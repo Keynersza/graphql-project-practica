@@ -7,6 +7,7 @@ import { useAllProducts } from '../components/Context/Products/customHooks-produ
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import CategoryHome from '../components/Category/category-home';
+import { CardImg } from '../components/Carrousel/CardImg';
 
 
 
@@ -14,6 +15,7 @@ const Home = () => {
   useEffect(() => {
     Aos.init();
   }, []);
+
   const { loading, data, error } = useAllProducts();
   console.log("aja", data?.allProducts);
   return (
@@ -30,7 +32,7 @@ const Home = () => {
           </div>
           <img src={imgHeader} className="img-header" />
         </div>
-        <div className="wave">
+         <div className="wave">
           <div style={{ height: '150px', overflow: 'hidden' }}>
             <svg
               viewBox="0 0 500 150"
@@ -43,11 +45,9 @@ const Home = () => {
               ></path>
             </svg>
           </div>
-        </div>
+        </div> 
       </header>
-      <br />
-      <br />
-      <br />
+        <CardImg/>
       <h2 className="pop-product">Productos Populares:</h2>
       {loading ? loading : <Products productos={data?.allProducts} />}
       <div>

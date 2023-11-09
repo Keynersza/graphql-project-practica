@@ -7,7 +7,9 @@ import { faBell, faCircleArrowDown, faMagnifyingGlass } from '@fortawesome/free-
 import { Logaout } from '../../controllers/logaout';
 
 export const Navigation = () => {
-
+  const clickLink = ()=>{
+    console.log("click");
+  }
   
   return (
     <nav>
@@ -35,17 +37,19 @@ export const Navigation = () => {
         </button>
         <div className="men-list">
           <Link>
-            <li>
+            <li onClick={() => clickLink()}>
               Categoria
               </li>
+              <div className='child-list'>
               <ul className='sublist-category'>
-              <FontAwesomeIcon icon={faCircleArrowDown} className="icon-arrow" />
+              <li></li>
                 <li>Ropa</li>
                 <li>Zapatos</li>
                 <li>Telefonos</li>
                 <li>Relojes</li>
                 <li>Neveras</li>
               </ul>
+              </div>
           </Link>
           <Link>
             <li>Contacto</li>

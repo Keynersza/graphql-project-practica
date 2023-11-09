@@ -143,9 +143,17 @@ header {
   list-style: none;
 }
 
-.list-ul a:focus-within .sublist-category {
+.list-ul a:hover .sublist-category {
   display: block; 
- 
+}
+
+.child-list ul>li:first-child{
+  border: 20px solid transparent;
+	border-bottom-color:#666;
+	width: 0;
+	position: relative;
+	left: 50%;
+	margin-left: -20px
 }
 
 
@@ -153,7 +161,7 @@ header {
   display: inline-block;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.786);
-  margin: 0px 35px;
+  margin: 0px 17px;
   font-size: 19px;
   font-weight: 450;
 }
