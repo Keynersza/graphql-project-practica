@@ -31,11 +31,11 @@ const InputSignIn = () => {
         }, 1000);
       },
       onCompleted: (data) => {
-        let datos = data.findPersonByEmail.name
-        console.log(datos);
+        let datos = data.findPersonByEmail
+        console.log("Bienvenido", datos);
           if (data) {
             setTimeout(() => {
-              localStorage.setItem('User', datos)
+              localStorage.setItem('User', datos.id)
               console.log("log");
               setLoading(false)
               navigate('/')

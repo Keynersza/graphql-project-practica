@@ -7,7 +7,7 @@ import { useAllProducts } from '../components/Context/Products/customHooks-produ
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import CategoryHome from '../components/Category/category-home';
-import { CardImg } from '../components/Carrousel/CardImg';
+import Cardimg from '../components/Carrousel/CardImg'
 
 
 
@@ -47,7 +47,7 @@ const Home = () => {
           </div>
         </div> 
       </header>
-        <CardImg/>
+        <Cardimg/>
       <h2 className="pop-product">Productos Populares:</h2>
       {loading ? loading : <Products productos={data?.allProducts} />}
       <div>

@@ -25,6 +25,7 @@ const Products = ({ productos }) => {
                   <p className="price-product">{product.price}</p>
                 </div>
                 <p className="date-product">{product.dueDate}</p>
+                <p>{product.name}</p>
                 <Link to={`/produc/${product.id}`}><button className="btn-product"
                 /* {
                  ...productos? <Producto productoId={productos}/>

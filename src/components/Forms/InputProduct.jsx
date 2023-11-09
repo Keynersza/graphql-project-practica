@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useAddProducts } from '../Context/Products/customHooks-products';
 import { upload } from '@testing-library/user-event/dist/upload';
 import { useEffect } from 'react';
+import { useSignIn } from '../Context/Login/hook-query-login';
 
 const InputProduct = () => {
  
@@ -11,22 +12,33 @@ const InputProduct = () => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [dueDate, setDue_Date] = useState(Date.now());
-
+  const [getIdUser] = useSignIn()
   const [addProduct] = useAddProducts();
   const createProduct = async (e) => {
+   
     e.preventDefault();
-    await addProduct(
-      {
-        variables: {
-          imageProduct,
-          nameProduct,
-          description,
-          price,
+      await addProduct(
+        { variables: 
+        { 
+          imageProduct, 
+          nameProduct, 
+          description, 
+          price, 
           dueDate,
+          idUser: localStorage.getItem("User", getIdUser.id)
         },
-      },
-      console.log('addProduct', addProduct)
-    );
+        onError: (error) => {
+          if (error) {
+            console.log(error);
+          }
+        },
+        onCompleted: (data) => {
+          if (data) {
+            console.log(data);
+          }
+        },
+      });
+      console.log("hola producto", getIdUser.id);
   };
 
   const imageCard = (e) => {
